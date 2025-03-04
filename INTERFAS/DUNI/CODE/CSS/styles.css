@@ -1,0 +1,317 @@
+/* Reset y configuración básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    height: auto;
+    width: auto;
+}
+
+/* Barra superior */
+.top-bar {
+    background: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+/* Barra de navegación */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 15px 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor superior (logo, búsqueda, sesión) */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.icono_entrada{
+    margin-left: 250px;
+    height: auto;
+    width: 25px;
+}
+
+.sesion{
+    margin-right: 50px;
+}
+
+.logo {
+    height: auto;
+    width: 110px;
+    margin-right: -70px;
+}
+
+/* Contenedor principal */
+.search-container {
+    position: relative;
+    width: 900px; /* Ajusta según el tamaño que necesites */
+    margin-left: 450px;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    width: 100%;
+    padding: 8px 40px 8px 15px; /* Espacio a la derecha para la lupa */
+    border: 1px solid #c2c2c2;
+    background-color: #c2c2c2;
+    color: rgb(53, 53, 53);
+    border-radius: 20px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Icono de búsqueda */
+.busqueda {
+    position: absolute;
+    right: 15px; /* Ajusta la posición horizontalmente */
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Contenedor inferior (menú con categorías) */
+.bottom-nav {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Dropdown (menús desplegables) */
+.nav-links .dropdown {
+    position: relative;
+    margin-left: 15px;
+}
+
+.nav-links .dropdown a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+}
+
+/* Submenús desplegables */
+.nav-links .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0);
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.nav-links .dropdown-menu a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: rgb(133, 133, 133);
+}
+
+/* Mostrar submenú al pasar el mouse */
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos generales */
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Contenedor de las tarjetas */
+.hero {
+    display: flex;
+    gap: 10px; /* Espacio entre tarjetas */
+    width: 100%;
+    justify-content: center;
+}
+
+/* Estilos generales de cada tarjeta */
+.card {
+    flex: 0.175; /* Tarjetas más angostas inicialmente */
+    position: relative;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 650px;
+    overflow: hidden;
+    transition: flex 0.5s ease-in-out;
+}
+
+/* Fondo oscuro para mejorar visibilidad del texto */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.281);
+    transition: background 0.5s ease-in-out;
+}
+
+/* Ajuste del fondo de cada tarjeta */
+.card {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Especificamos imágenes */
+#floral {
+    background-image: url('/DUNI/RG/IMG/INICIO/floral.png');
+}
+
+#eventos {
+    background-image: url('/DUNI/RG/IMG/INICIO/evento.png');
+}
+
+#envases {
+    background-image: url('/DUNI/RG/IMG/INICIO/envases.png');
+}
+
+/* Texto dentro de la tarjeta */
+.card h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 26px; /* Tamaño normal */
+    text-align: left;
+    width: 70%;
+    font-weight: normal;
+    font-family: 'Arial', sans-serif;
+    transition: font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out; /* Transición suave */
+    top: 20px;
+}
+
+/* Texto oculto */
+.card p {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 2;
+    border-color: white;
+    background-color: white;
+    border-radius: 30px;
+    margin: 15px;
+    padding: 20px;
+}
+
+/* Efecto Hover - Expansión horizontal */
+.card:hover {
+    flex: 0.36; /* Hace que la tarjeta en hover crezca más ancha */
+    cursor: pointer;
+}
+
+/* Mantiene la imagen bien ajustada */
+.card:hover {
+    background-size: auto;
+}
+
+.card:hover::before {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.card:hover p {
+    opacity: 1; /* Hace visible el texto */
+}
+
+/* Cuando el mouse pasa sobre la tarjeta */
+.card:hover h2 {
+    font-size: 42px; /* Tamaño aumentado */
+    width: 60%
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .search-container {
+        width: 100%;
+        margin: 0;
+        padding: 0 15px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex: 1;
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+        width: 100%;
+    }
+
+    .card:hover h2 {
+        font-size: 28px;
+    }
+
+    .card p {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
